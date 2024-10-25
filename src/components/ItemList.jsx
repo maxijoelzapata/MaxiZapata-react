@@ -1,6 +1,5 @@
-// src/components/ItemList.jsx
 import React from 'react';
-import './../styles/ItemList.css'; // Asegúrate de que esta ruta es correcta
+import './../styles/ItemList.css'; 
 import Item from './Item';
 
 const ItemList = ({ products }) => {
