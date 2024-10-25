@@ -1,22 +1,24 @@
+// src/App.jsx
 import React from 'react';
-import NavBar from './components/NavBar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import ItemListContainer from './containers/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer';
+import './styles/App.css';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      {/* Renderiza el NavBar y pasa el nombre de la tienda como props */}
-      <NavBar title="El Taruguito" />
-
-      {/* Contenido principal */}
-      <h1 style={mainContentStyle}>Bienvenido a El Taruguito</h1>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/product/:productId" element={<ItemDetailContainer />} />
+        </Routes>
+      </div>
+    </Router>
   );
-};
-
-const mainContentStyle = {
-  textAlign: 'center',
-  marginTop: '50px',
-  fontFamily: 'Arial, sans-serif',
-};
+}
 
 export default App;
