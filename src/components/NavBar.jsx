@@ -5,7 +5,7 @@ import './../styles/Navbar.css';
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>El Taruguito</h1>
+      <h1>CompuMaxi</h1>
       <ul>
         <li><Link to="/">Inicio</Link></li>
         <li><Link to="/category/Computadoras">Computadoras</Link></li>
